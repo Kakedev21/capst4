@@ -1,0 +1,104 @@
+import { useState } from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
+const Login = () => {
+  const [userData, setUserData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const { username, email, password, confirmPassword } = userData;
+
+  const handleChange = (e) => {
+    setUserData((data) => ({
+      ...data,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = (e) => {};
+
+  return (
+    <div>
+      <Header />
+      <div
+        className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-gray-50"
+        style={{
+          backgroundImage:
+            "url(https://jgzn.files.wordpress.com/2016/09/lg28.jpg)",
+          width: "100%",
+          height: "100vh",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+      >
+        <div>
+          <a href="/">
+            <h3 className="text-4xl font-bold text-black-600">Juan Hiker</h3>
+          </a>
+        </div>
+        <div
+          className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md sm:rounded-lg"
+          style={{ opacity: "80%" }}
+        >
+          <form>
+            <div></div>
+            <div className="mt-4">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700 undefined"
+              >
+                Email
+              </label>
+              <div className="flex flex-col items-start">
+                <input
+                  type="email"
+                  name="email"
+                  className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  value={email}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="mt-4">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700 undefined"
+              >
+                Password
+              </label>
+              <div className="flex flex-col items-start">
+                <input
+                  type="password"
+                  name="password"
+                  className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  value={password}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="mt-4"></div>
+            <div className="flex items-center justify-end mt-4">
+              <a
+                className="text-sm text-gray-600 underline hover:text-gray-900"
+                href="#"
+              >
+                Not yet registered?
+              </a>
+              <button
+                type="submit"
+                className="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md active:bg-gray-900 false"
+              >
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
+export default Login;
