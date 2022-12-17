@@ -12,6 +12,7 @@ import Register from "./pages/Register";
 import Pricing from "./pages/Pricing";
 import Booking from "./pages/Booking";
 import QrCode from "./components/QrCode";
+import Admin from "./pages/Admin";
 
 //components
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/qrcode" element={<QrCode />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
       <ToastContainer />
     </BrowserRouter>

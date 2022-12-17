@@ -19,6 +19,9 @@ const userSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    qrData: {
+      type: String,
+    },
   },
   {
     timestamps: true,
